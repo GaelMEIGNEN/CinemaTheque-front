@@ -7,11 +7,3 @@ handlers:
   - url: /(.*)
     static_files: dist/cinematheque-front/index.html
     upload: dist/cinematheque-front/index.html
-skip_files:
-  - e2e/
-  - node_modules/
-  - src/
-  - ^(.*/)?\..*$
-  - ^(.*/)?.*\.md$
-  - ^(.*/)?.*\.yaml$
-  - ^LICENSE
