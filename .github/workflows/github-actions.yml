@@ -4,6 +4,13 @@ jobs:
   DeployAppEngine:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - run: npm install
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
         with:
