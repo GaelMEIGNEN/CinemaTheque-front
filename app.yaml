@@ -1,6 +1,5 @@
 runtime: nodejs16
 service: cinematheque-front
-threadsafe: yes
 handlers:
   - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
     static_files: dist/cinematheque-front/\1
