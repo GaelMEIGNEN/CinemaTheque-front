@@ -1,14 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Home />
+  <Header> </Header>
+
+  <Home> </Home>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Home from "./views/Home.vue";
+import Header from "./components/Header.vue";
 
 @Options({
   components: {
+    Header,
     Home,
   },
 })

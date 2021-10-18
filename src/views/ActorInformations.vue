@@ -5,7 +5,7 @@
     <ul>
       A joué dans :
       <li v-for="movie in actor.starredIn" v-bind:key="movie.id">
-        <movie-list></movie-list>
+        <movies-list></movies-list>
       </li>
     </ul>
   </div>
@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { Actor } from "../classes/Actor";
-import MovieList from "../components/MovieList.vue";
+import Actor from "../types/Actor";
+import MoviesList from "../components/MoviesList.vue";
 
 @Options({
   name: "actorInformations",
@@ -22,7 +22,7 @@ import MovieList from "../components/MovieList.vue";
     actor: Actor,
   },
   components: {
-    MovieList,
+    MoviesList,
   },
 })
 export default class ActorInformations extends Vue {}

@@ -1,20 +1,22 @@
 <template>
   <div class="header">
-    <img src="./../assets/logo.png" />
-    <a @click="redirectToHomepage">Accueil</a>
+    <a @click="redirectToHome()">
+      <img src="./../assets/logo.png" />
+      Accueil
+    </a>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import router from "./../router/index";
 
 @Options({
   name: "header",
+  methods: {
+    redirectToHome() {
+      this.$router.go("/");
+    },
+  },
 })
-export default class Header extends Vue {
-  redirectToHomepage() {
-    router.push("/");
-  }
-}
+export default class Header extends Vue {}
 </script>
