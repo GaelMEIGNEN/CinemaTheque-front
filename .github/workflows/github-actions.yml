@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: 16.x
       - run: npm install
@@ -18,5 +18,4 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           credentials: ${{ secrets.GCP_SA_KEY }}
-          working_directory: "./dist/cinematheque-front"
           deliverables: "../../app.yaml"
