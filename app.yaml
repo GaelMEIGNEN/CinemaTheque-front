@@ -7,3 +7,11 @@ resources:
   cpu: 1
   memory_gb: 0.5
   disk_size_gb: 10
+  handlers:
+  # Serve all static files with urls ending with a file extension
+- url: /(.*\..+)$ 
+  static_files: dist/cinematheque-front/\1
+  upload: dist/cinematheque-front/(.*\..+)$  # catch all handler to index.html
+- url: /.*
+  static_files: dist/cinematheque-front/index.js
+  upload: dist/cinematheque-front/index.js
