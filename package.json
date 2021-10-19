@@ -4,7 +4,7 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "vue-cli-service build",
     "serve": "vue-cli-service serve",
     "build": "tsc && vue-cli-service build",
     "lint": "vue-cli-service lint"
