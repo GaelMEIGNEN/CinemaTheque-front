@@ -1,9 +1,8 @@
 runtime: nodejs16
 service: cinematheque-front
-handlers:
-  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
-    static_files: dist/cinematheque-front/\1
-    upload: dist/cinematheque-front/(.*)(|\.map)
-  - url: /(.*)
-    static_files: dist/cinematheque-front/index.js
-    upload: dist/cinematheque-front/index.js
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
