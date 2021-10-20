@@ -1,4 +1,4 @@
-# vuetrainingts
+# CinemaTheque-front
 
 ## Project setup
 ```
