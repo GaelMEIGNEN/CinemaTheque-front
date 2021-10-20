@@ -1,4 +1,5 @@
 runtime: python27
+threadsafe: true
 service: cinematheque-front
 handlers:
   # Serve all static files with urls ending with a file extension
