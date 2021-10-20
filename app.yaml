@@ -1,5 +1,4 @@
-runtime: nodejs
-env: flex
+runtime: python27
 service: cinematheque-front
 handlers:
   # Serve all static files with urls ending with a file extension
