@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "tsc && vue-cli-service build",
+    "build": "tsc && vue-cli-service build --dest dist/cinematheque-front/",
     "lint": "vue-cli-service lint",
     "start": "vue-cli-service build"
   },
