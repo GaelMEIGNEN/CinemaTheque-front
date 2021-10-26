@@ -7,5 +7,5 @@ handlers:
     static_files: dist/cinematheque-front/\1
     upload: dist/cinematheque-front/(.*\..+)$ # catch all handler to index.html
   - url: /.*
-    static_files: dist/cinematheque-front/main.js
-    upload: dist/cinematheque-front/main.js
+    static_files: dist/cinematheque-front/index.html
+    upload: dist/cinematheque-front/index.html
