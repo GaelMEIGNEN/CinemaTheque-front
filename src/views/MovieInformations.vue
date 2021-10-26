@@ -32,8 +32,9 @@ import axios from "axios";
   },
   created() {
     this.movie = this.$store.state.displayedMovie;
+    console.log(this.$route.params.id);
     axios
-      .get(`http://localhost:3000/movies/${this.movie.id}`)
+      .get(`/api/movies/${this.$route.params.id}`)
       .then((response) => {
         this.movie = response.data as Movie;
         this.isLoading = false;
@@ -43,10 +44,6 @@ import axios from "axios";
       });
   },
   methods: {
-    showFilm() {
-      console.log(this.movie);
-      return this.movie;
-    },
     releaseDateToText() {
       if (this.movie != undefined && this.movie.releaseDate) {
         return this.movie.releaseDate.value;

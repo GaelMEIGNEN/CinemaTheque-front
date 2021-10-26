@@ -1,12 +1,7 @@
 <template>
   <div id="home">
     <h1>Bienvenue dans la CinémaThèque !</h1>
-    <div v-if="$store.state.moviesListDisplay">
-      <movies-list></movies-list>
-    </div>
-    <div v-else-if="$store.state.movieDisplay">
-      <movie-informations> </movie-informations>
-    </div>
+    <movies-list></movies-list>
   </div>
 </template>
 

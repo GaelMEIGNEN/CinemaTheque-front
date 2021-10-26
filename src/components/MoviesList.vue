@@ -3,8 +3,11 @@
     <div v-if="isLoading"><loading></loading></div>
     <div v-else>
       <ul>
-        <li v-for="movie in moviesList" v-bind:key="movie.id">
-          <a @click="setDisplayedMovie(movie)">
+        <li v-for="movie in moviesList" v-bind:key="movie._id">
+          <router-link
+            :to="{ path: '/movies/' + movie._id }"
+            @click="setDisplayedMovie(movie)"
+          >
             <div class="movie">
               <h2>{{ movie.title }}</h2>
               <br />
@@ -12,7 +15,7 @@
               <!-- Actors:
             <actor-list v-bind:actorsList="movie.actorsStarring"> </actor-list> -->
             </div>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -22,14 +25,16 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Movie from "../types/Movie";
+import MovieInformations from "../views/MovieInformations.vue";
 import ActorsList from "./ActorsList.vue";
 import Loading from "./Loading.vue";
 import axios from "axios";
 
 @Options({
-  name: "movieList",
+  name: "moviesList",
   components: {
     ActorsList,
+    MovieInformations,
     Loading,
   },
   methods: {
@@ -43,7 +48,7 @@ export default class MoviesList extends Vue {
   isLoading = true;
   created() {
     axios
-      .get("http://localhost:3000/movies/")
+      .get("/api/movies/")
       .then((response) => {
         this.moviesList = response.data as Movie[];
         this.isLoading = false;

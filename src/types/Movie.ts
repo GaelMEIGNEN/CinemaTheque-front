@@ -1,7 +1,7 @@
 import Actor from "./Actor";
 
 export default class Movie {
-  id: string;
+  _id: string;
   title: string;
   posterPath: string;
   releaseDate: Date;
@@ -9,14 +9,14 @@ export default class Movie {
   actorsStarring: Actor[];
 
   constructor(
-    id: string,
+    _id: string,
     title: string,
     posterPath: string,
     releaseDate: Date,
     overview: string,
     actorsStarring: Actor[]
   ) {
-    this.id = id;
+    this._id = _id;
     this.title = title;
     this.posterPath = posterPath;
     this.releaseDate = releaseDate;
